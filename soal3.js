@@ -1,16 +1,24 @@
 const printSegitiga = 5;
-let temp = '';
+let temp = "";
 
-if (typeof printSegitiga === 'number') {
+if (typeof printSegitiga !== "number") {
+	return console.log("Nilai printSegitiga harus number");
+}
+
+if (printSegitiga < 0) {
+	return console.log(`Angka variable printSegitiga tidak boleh negative`);
+}
+
+if (typeof printSegitiga === "number") {
 	for (let i = 0; i < printSegitiga; i++) {
 		for (let j = 1; j <= printSegitiga - i; j++) {
 			temp += j;
 		}
 		console.log(temp);
-		temp = '';
+		temp = "";
 	}
 } else {
-	console.log('Data harus number');
+	console.log("Data harus number");
 }
 
 /* Pada program pembuatan segitiga ini hal pertama yang dilakukan yaitu asign variable printSegitiga untuk jumlah yang ingin ditampilkan

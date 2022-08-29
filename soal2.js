@@ -1,21 +1,40 @@
 const mtk = 60;
 const bahasaIndonesia = 95;
 const ipa = 60;
-const bahasaInggris = 76;
+const bahasaInggris = 100;
+
+const validasiNilai = typeof mtk && typeof bahasaIndonesia && typeof ipa && typeof bahasaInggris !== "number";
+
+if (validasiNilai) {
+	return console.log("Nilai harus berupa number");
+}
+
+if (mtk < 0) {
+	return console.log(`nilai MTK tidak boleh negative`);
+}
+if (bahasaIndonesia < 0) {
+	return console.log(`nilai Bahasa Indonesia tidak boleh negative`);
+}
+if (ipa < 0) {
+	return console.log(`nilai IPA tidak boleh negative`);
+}
+if (bahasaInggris < 0) {
+	return console.log(`nilai Bahasa Inggris tidak boleh negative`);
+}
 
 const hitungRataRata = (mtk + bahasaIndonesia + ipa + bahasaInggris) / 4;
 
 console.log(`Rata-rata=${hitungRataRata}`);
 if (hitungRataRata > 90) {
-	console.log('Grade = A');
+	console.log("Grade = A");
 } else if (hitungRataRata > 80) {
-	console.log('Grade = B');
+	console.log("Grade = B");
 } else if (hitungRataRata > 70) {
-	console.log('Grade = C');
+	console.log("Grade = C");
 } else if (hitungRataRata > 60) {
-	console.log('Grade = D');
+	console.log("Grade = D");
 } else {
-	console.log('Grade = E');
+	console.log("Grade = E");
 }
 
 /* Pertama yaitu mendeklarasikan variabel mtk, bahasaIndonesia, ipa, dan bahasaInggris dimana isi dari variable tersebut berupa number
